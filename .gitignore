@@ -1,7 +1,6 @@
 *.pyc
 .idea/*
 reports/
-test-reports/
 .pytest_cache/
 .DS_Store
 *.env

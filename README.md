@@ -11,3 +11,4 @@ IMPOVEMENTS
 - Fix scenario 2 to work with upload file
 - Replace hardcoded "wait" for file upload with actual waiting until the file is uploaded
 - Get sensitive data (password) from .env file
+- Add XML report under `tests/reports` folder for further automation (integration with test management tools, etc)
