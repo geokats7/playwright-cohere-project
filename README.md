@@ -3,7 +3,7 @@ Installation of project. Create a new virtual environment using python 3.9+ and 
 `playwright install`
 
 **NOTE**  
-Make sure to add a `.env` file with the appropriate values
+Make sure to add a `.env` file with the appropriate values at the project root
 
 Run the tests from project root:  
 `pytest tests/tests_cohere_pom.py`
