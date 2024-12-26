@@ -12,4 +12,8 @@ class HomePage:
     def click_try_now(self):
         self.chat_button.click()
 
+    def logout(self):
+        self.page.get_by_role("button", name="").click()
+        self.page.get_by_role("link", name="Log out").click()
+
     

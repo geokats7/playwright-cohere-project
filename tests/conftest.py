@@ -4,6 +4,7 @@ from dotenv import load_dotenv
 from playwright.sync_api import sync_playwright
 from utils import get_random_title
 from tests.page_objects.login import LoginPage
+from tests.page_objects.home import HomePage
 
 load_dotenv()
 
@@ -27,12 +28,11 @@ def page():
         # Accept all cookies
         page.get_by_role("button", name="Accept All").click()
 
-        page.get_by_role("link", name="Dashboard").nth(2).click(button="right")
-        assert page.get_by_role("link", name="Dashboard").nth(2).inner_text() == "Dashboard"
-        
-        yield page        
-        page.get_by_role("button", name="").click()
-        page.get_by_role("link", name="Log out").click()
+        home_page = HomePage(page)
+        assert home_page.dashboard_link.inner_text() == "Dashboard"
+ 
+        yield page
+        home_page.logout()        
         assert "login" in page.url
         
         page.close()
